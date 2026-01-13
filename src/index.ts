@@ -215,21 +215,34 @@ export function searchLoops(query: string): BehavioralLoop[] {
  * Get the emotions dataset
  */
 export function getEmotions(): Emotion[] {
-    return emotionsData as Emotion[];
+    // emotions.json structure is { primary: Emotion[], ... }
+    const data = emotionsData as unknown as { primary: Emotion[], secondary?: Emotion[], tertiary?: Emotion[] };
+    return [
+        ...(data.primary || []),
+        ...(data.secondary || []),
+        ...(data.tertiary || [])
+    ];
 }
 
 /**
  * Get cognitive biases dataset
  */
 export function getBiases(): CognitiveBias[] {
-    return biasesData as CognitiveBias[];
+    // biases.json is a dictionary with a _metadata key
+    // We filter out the _metadata key by checking for the 'id' property which biases have but metadata doesn't
+    return Object.values(biasesData).filter((item: any) => item.id) as CognitiveBias[];
 }
 
 /**
  * Get personality traits dataset
  */
 export function getTraits(): PersonalityTrait[] {
-    return traitsData as PersonalityTrait[];
+    // traits.json is a dictionary where the key is the ID
+    // We need to inject the ID into the object
+    return Object.entries(traitsData).map(([id, trait]) => ({
+        id,
+        ...(trait as any)
+    })) as PersonalityTrait[];
 }
 
 // ============================================================================

@@ -7,7 +7,7 @@ A comprehensive, structured taxonomy of **1,140+ human behavioral loops**, emoti
 
 ## Overview
 
-This package provides the foundational behavioral science data structures used by the [AFFECTIVELY](https://affectively.app) platform. It categorizes human behavior into structured, machine-readable formats suitable for:
+This package provides the foundational behavioral science data structures used by the [AFFECTIVELY](https://affectively.ai) platform. It categorizes human behavior into structured, machine-readable formats suitable for:
 
 - Emotion AI / Affective Computing
 - Natural Language Processing
@@ -30,10 +30,10 @@ bun add @affectively/behavioral-taxonomy
 
 ```typescript
 import { 
-  getBehavioralLoops, 
-  getEmotions, 
-  getBiases, 
-  getTraits 
+ getBehavioralLoops, 
+ getEmotions, 
+ getBiases, 
+ getTraits 
 } from '@affectively/behavioral-taxonomy';
 
 // Get all behavioral loops
@@ -58,42 +58,42 @@ Each loop follows a structured format:
 
 ```typescript
 interface BehavioralLoop {
-  id: number;
-  name: string;
-  logic: {
-    given: string;   // Initial condition
-    when: string;    // Trigger event
-    then: string;    // Resulting behavior
-    result: string;  // Long-term outcome
-  };
-  taxonomy: {
-    origin: 'GENETIC' | 'BEHAVIORAL' | 'NARRATIVE' | 'DIGITAL' | 'ENVIRONMENTAL';
-    modality: 'VISUAL_STATIC' | 'VISUAL_DYNAMIC' | 'AUDITORY' | 'HAPTIC' | 'OLFACTORY' | 'META' | 'PROXEMIC';
-    mutability: 'IMMUTABLE' | 'STUBBORN' | 'FLUID' | 'VOLATILE';
-    valences: ('ATTRACTION' | 'REPULSION' | 'DOMINANCE' | 'SUBMISSION' | 'TRUST' | 'DECEPTION' | 'DISRUPTION')[];
-  };
-  operator: {
-    name: string;      // Named psychological mechanism
-    mechanism: string; // Description of how it works
-  };
-  veracity: {
-    objectiveGrounding: number;      // 0-1: Evidence basis
-    socialConsensus: number;         // 0-1: Social agreement
-    recursiveAmplification: number;  // 0-1: Self-reinforcing strength
-    frictionIndex: number;           // 0-1: Resistance to change
-  };
-  intervention: {
-    difficulty: number;  // 1-10: How hard to change
-    interdict: string;   // How to block the loop
-    minimize: string;    // How to reduce intensity
-    recognize: string;   // How to detect it
-    leverage?: string;   // How to use positively
-  };
-  meta: {
-    tags: string[];
-    relatedArchetypes?: string[];
-    academicFields?: string[];
-  };
+ id: number;
+ name: string;
+ logic: {
+ given: string; // Initial condition
+ when: string; // Trigger event
+ then: string; // Resulting behavior
+ result: string; // Long-term outcome
+ };
+ taxonomy: {
+ origin: 'GENETIC' | 'BEHAVIORAL' | 'NARRATIVE' | 'DIGITAL' | 'ENVIRONMENTAL';
+ modality: 'VISUAL_STATIC' | 'VISUAL_DYNAMIC' | 'AUDITORY' | 'HAPTIC' | 'OLFACTORY' | 'META' | 'PROXEMIC';
+ mutability: 'IMMUTABLE' | 'STUBBORN' | 'FLUID' | 'VOLATILE';
+ valences: ('ATTRACTION' | 'REPULSION' | 'DOMINANCE' | 'SUBMISSION' | 'TRUST' | 'DECEPTION' | 'DISRUPTION')[];
+ };
+ operator: {
+ name: string; // Named psychological mechanism
+ mechanism: string; // Description of how it works
+ };
+ veracity: {
+ objectiveGrounding: number; // 0-1: Evidence basis
+ socialConsensus: number; // 0-1: Social agreement
+ recursiveAmplification: number; // 0-1: Self-reinforcing strength
+ frictionIndex: number; // 0-1: Resistance to change
+ };
+ intervention: {
+ difficulty: number; // 1-10: How hard to change
+ interdict: string; // How to block the loop
+ minimize: string; // How to reduce intensity
+ recognize: string; // How to detect it
+ leverage?: string; // How to use positively
+ };
+ meta: {
+ tags: string[];
+ relatedArchetypes?: string[];
+ academicFields?: string[];
+ };
 }
 ```
 
@@ -131,12 +131,12 @@ If you use this dataset in academic work, please cite:
 
 ```bibtex
 @dataset{affectively_behavioral_taxonomy_2026,
-  author       = {AFFECTIVELY},
-  title        = {Human Behavioral Loop Taxonomy},
-  year         = {2026},
-  publisher    = {npm},
-  version      = {1.0.0},
-  url          = {https://github.com/affectively-ai/behavioral-taxonomy}
+ author = {AFFECTIVELY},
+ title = {Human Behavioral Loop Taxonomy},
+ year = {2026},
+ publisher = {npm},
+ version = {1.0.0},
+ url = {https://github.com/affectively-ai/behavioral-taxonomy}
 }
 ```
 
@@ -163,9 +163,9 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for gu
 ## Support
 
 - [GitHub Issues](https://github.com/affectively-ai/behavioral-taxonomy/issues)
-- [Documentation](https://affectively.app/docs)
+- [Documentation](https://affectively.ai/docs)
 - [Discord Community](https://discord.gg/affectively)
 
 ---
 
-Made with ❤️ by [AFFECTIVELY](https://affectively.app)
+Made with ️ by [AFFECTIVELY](https://affectively.ai)
